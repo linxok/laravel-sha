@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/user/{lastName}/{firstName}', \App\Http\Controllers\Name\NameController::class )
+    ->where(['lastName' => '[a-z]+', 'firstName' => '[a-z]+']);
